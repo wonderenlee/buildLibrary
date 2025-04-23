@@ -69,8 +69,8 @@ class Book extends Media {
 
 // create child class Movie
 class Movie extends Media {
-    constructor(director, runTime) {
-        super(title, ratings, isCheckedOut);
+    constructor(title, director, runTime) {
+        super(title);
         this._director;
         this._runTime;
     }
