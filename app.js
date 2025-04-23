@@ -21,23 +21,32 @@ class Media {
     }
   
     // create setter
-    set isCheckedOut() {
-      return this._isCheckedOut;
+    set isCheckedOut(value) {
+      this._isCheckedOut = value;
     }
-  
-    getAverageRating() {
-      return this._getAverageRating;
-    }
-  
+
+    // create methods
+    // create method toggleCheckOutStatus that changes the value saved to the _isCheckedOut property    
     toggleCheckOutStatus() {
-      return this.toggleCheckOutStatus;
+        if (this_.isCheckedOut === true) {
+            return this._isChecekedOut = false;
+        } else {
+            return this._isCheckedOut = true;
+        }
     }
-  
-    addRating() {
-      return this.addRating;
+      
+    getAverageRating() {
+        let ratingsSum = this.ratings.reduce((currentSum, rating) => currentSum + rating, 0);
+        const ratingsLength = this.ratings.length;
+        ratingsAvg = ratingsSum / ratingsLength;
+        return ratingsAvg;
+      }
+
+    addRating(value2) {
+        this.addRating.push(value2);
     }
   }
-  
+  /*
   // create child class Book
   class Book extends Media {
     constructor(author, pages) {
@@ -86,6 +95,4 @@ class Media {
   
     get pages() {
       return this._pages;
-    }
-  }
-  
+    } */
