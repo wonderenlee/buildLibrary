@@ -83,20 +83,28 @@ class Movie extends Media {
         return this._runTime;
     }
 }
+// create a Book instance
+const historyOfEverything = new Book(
+    'Bill Bryson',
+    'A Short History of Nearly Everything',
+    544
+);
 
-// create child class CD
-class CD extends Media {
-    constructor(artist, pages) {
-        super(title, ratings, isCheckedOut);
-        this._artist;
-        this._pages;
-    }
 
-    get artist() {
-        return this._artist;
-    }
+historyOfEverything.toggleCheckOutStatus;
 
-    get pages() {
-        return this._pages;
-    }
-}
+console.log(historyOfEverything.isCheckedOut);
+
+historyOfEverything.addRating(4,5,5)*3;
+
+historyOfEverything.getAverageRating();
+// create a Book instance
+const speed = new Movie("Jan de Bont", "Speed", 116);
+
+speed.toggleCheckOutStatus;
+
+console.log(speed.isCheckedOut);
+
+speed.addRating(1,1,5)*3;
+
+speed.getAverageRating();
